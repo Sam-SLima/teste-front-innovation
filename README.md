@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Sobre o Projeto
 
-## Getting Started
+Este projeto é um teste prático de front-end desenvolvido com **React**, **Next.js** e **TailwindCSS**.  
+Ele demonstra habilidades em:
 
-First, run the development server:
+- Consumo de APIs
+- Gerenciamento de estado global (Zustand)
+- Componentização e modais
+- UI/UX com Tailwind e Material Icons
+- Filtragem e favoritos de produtos
+
+O objetivo é criar uma **aplicação de catálogo de produtos**, com login, listagem de produtos, marcação de favoritos e visualização de detalhes.
+
+---
+
+## Tecnologias Utilizadas
+
+- **React** – Biblioteca principal de UI
+- **Next.js** – Framework de React para SSR e rotas
+- **TailwindCSS** – Estilização rápida e responsiva
+- **Material UI Icons** – Ícones prontos e consistentes
+- **Zustand** – Gerenciamento de estado global
+- **SWR** – Fetch e cache de dados
+- **next/font** – Otimização e carregamento de fontes
+- **JavaScript / TypeScript**
+
+---
+
+## Funcionalidades
+
+- Tela de Login funcional
+- Listagem de produtos com imagens, preços e descrição
+- Adicionar/remover produtos favoritos
+- Filtrar para mostrar apenas produtos favoritos
+- Modal com detalhes completos do produto
+- Suporte a teclado (`Esc` para fechar modal)
+- Layout responsivo para diferentes telas
+
+---
+
+## Estrutura do Projeto
+
+├─ /app # Páginas e rotas do Next.js
+├─ /components # Componentes reutilizáveis (CardProduto, Modal, etc)
+├─ /lib # Configurações de API e helpers
+├─ /store # Estado global com Zustand
+├─ /public # Imagens e arquivos estáticos
+├─ /styles # CSS global e Tailwind config
+├─ /pages # (caso use) Páginas do Next.js
+
+## 🚀 Como Rodar o Projeto
+
+1. Clone o repositório:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <URL_DO_REPO>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependencias:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Inicie o servidor de desenvolvimento:
 
-## Learn More
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+4. Abra no navegador:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Fontes e Tipografia
 
-## Deploy on Vercel
+Este projeto utiliza next/font
+para carregar a fonte Geist de forma otimizada.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Recursos e Documentação
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js Documentation
+
+- Learn Next.js
+
+- TailwindCSS Documentation
+
+- Material UI Icons
+
+- Zustand Documentation
+
+## Variáveis de ambiente
+
+NEXT_PUBLIC_API_BASE=https://apihomolog.innovationbrindes.com.br/api
+
+## Decisões tecnicas e pendências
+
+- TailwindCSS: escolhi o TailwindCSS por ser a biblioteca de estilização que domino atualmente, o que trouxe mais agilidade ao desenvolvimento e garantiu consistência visual no projeto.
+
+- Material UI Icons: utilizei o Material UI Icons para reforçar a interface com ícones padronizados, tornando o design mais atrativo e de fácil interpretação.
+
+- Identidade Visual: não utilizei a logo oficial da Innovation por não tê-la disponível localmente, mas mantive o nome em tipografia semelhante, buscando preservar ao máximo a identidade visual da empresa.
+
+- Componentização: a intenção inicial era componentizar elementos de UI como botões, inputs e cards para promover reutilização e manutenção mais simples. Contudo, durante o desenvolvimento surgiram erros de importação que, pelo tempo limitado disponível, poderiam comprometer a entrega. Nesse contexto, priorizei a implementação funcional das telas de Login e Produtos, mantendo os elementos diretamente nelas. Como evolução futura, a componentização completa será uma prioridade.
+
+- Imagens (<img> vs next/image): a implementação ideal seria usar o componente next/image para otimização automática e melhor pontuação em performance. No entanto, ao integrá-lo com as imagens vindas da API (armazenadas em S3), surgiram conflitos de configuração no next.config.js e erros relacionados a propriedades obrigatórias (como width/height).
+  Como o prazo para a entrega era curto e resolver essas questões demandaria mais tempo de ajuste, optei por utilizar o elemento nativo <img> apenas para garantir que o fluxo principal funcionasse.
+  Para uma versão futura, a migração completa para next/image é um dos pontos prioritários, tanto pela performance quanto pelo SEO
