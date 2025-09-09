@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 // Ícones do MUI
 import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
+import Head from "next/head";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -56,6 +57,13 @@ const LoginPage = () => {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-gray-50">
+      <Head>
+        <title>Login - Innovation Brindes</title>
+        <meta
+          name="description"
+          content="Acesse sua conta no Innovation Brindes"
+        />
+      </Head>
       <h1 className="text-2xl text-green-600 font-bold mb-6">
         Bem-vindo a Innovation Brindes
       </h1>
