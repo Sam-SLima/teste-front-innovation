@@ -102,3 +102,10 @@ NEXT_PUBLIC_API_BASE=https://apihomolog.innovationbrindes.com.br/api
 - Imagens (<img> vs next/image): a implementação ideal seria usar o componente next/image para otimização automática e melhor pontuação em performance. No entanto, ao integrá-lo com as imagens vindas da API (armazenadas em S3), surgiram conflitos de configuração no next.config.js e erros relacionados a propriedades obrigatórias (como width/height).
   Como o prazo para a entrega era curto e resolver essas questões demandaria mais tempo de ajuste, optei por utilizar o elemento nativo <img> apenas para garantir que o fluxo principal funcionasse.
   Para uma versão futura, a migração completa para next/image é um dos pontos prioritários, tanto pela performance quanto pelo SEO
+
+## Evidencias
+<img width="1917" height="1028" alt="telaLogin" src="https://github.com/user-attachments/assets/3605f1f4-d43a-4901-887a-603bcae3ed02" />
+![evidencia1](https://github.com/user-attachments/assets/42d68449-0eb1-4fa5-8cf8-3346571fa8a9)
+![evidencia2](https://github.com/user-attachments/assets/e38861a0-45ef-4107-bda6-212ec07630ee)
+
+
