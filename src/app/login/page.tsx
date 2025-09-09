@@ -42,10 +42,14 @@ const LoginPage = () => {
       } else {
         setErro(res.data.message || "falha no login");
       }
-    } catch (err: any) {
-      if (err.response) {
-        setErro(err.response.data.message || "Erro retornado pela API");
-      } else if (err.request) {
+    } catch (err: unknown) {
+      const e = err as {
+        response?: { data?: { message?: string } };
+        request?: unknown;
+      };
+      if (e.response) {
+        setErro(e.response.data?.message || "Erro retornado pela API");
+      } else if (e.request) {
         setErro("A API não respondeu. Tente novamente mais tarde.");
       } else {
         setErro("Erro desconhecido. Tente novamente");
